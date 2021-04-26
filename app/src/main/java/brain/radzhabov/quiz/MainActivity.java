@@ -30,7 +30,9 @@ public class MainActivity extends AppCompatActivity {
                     Intent intent = new Intent(MainActivity.this, GameLevels.class);
                     startActivity(intent);
                     finish();
-                } catch(Exception e) {}
+                } catch(Exception e) {
+                    //пусто
+                }
             }
         });
     }
