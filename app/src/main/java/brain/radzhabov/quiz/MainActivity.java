@@ -1,7 +1,6 @@
 package brain.radzhabov.quiz;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -16,21 +15,21 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        Window w = getWindow();
+        w.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
         Button buttonStart = (Button)findViewById(R.id.buttonStart);
         buttonStart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //обработка кнопки "Начать"
                 try {
                     Intent intent = new Intent(MainActivity.this, GameLevels.class);
                     startActivity(intent);
                     finish();
-                } catch (Exception e) {
-
-                } // конец конструкции
+                } catch (Exception e) {}
             }
         });
-
-        Window w = getWindow();
-        w.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
     }
+
 }

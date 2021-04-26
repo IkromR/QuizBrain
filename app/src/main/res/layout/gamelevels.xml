@@ -41,7 +41,6 @@
                     android:textSize="24sp"
                     android:paddingRight="5dp"
                     android:paddingLeft="5dp"
-                    android:onClick="buttonBack"
                     android:textColor="@color/black95"
                     android:textAllCaps="false"/>
             </LinearLayout>
