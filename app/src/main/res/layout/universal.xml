@@ -237,6 +237,35 @@
                     android:src="@drawable/imgtest"
                     />
             </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/line4"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+                <TextView
+                    android:id="@+id/text_left"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Text Left"
+                    android:textColor="@color/white"
+                    android:textSize="30sp"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1"
+                    android:gravity="center" />
+
+                <TextView
+                    android:id="@+id/text_rigtht"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Text Rightt"
+                    android:textColor="@color/white"
+                    android:textSize="30sp"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1"
+                    android:gravity="center" />
+            </LinearLayout>
         </LinearLayout>
     </LinearLayout>
 </RelativeLayout>
