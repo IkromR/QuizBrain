@@ -17,9 +17,11 @@ public class Level1 extends AppCompatActivity {
         //код для скругление углов левой картинки
         img_left.setClipToOutline(true);
 
+
         final ImageView img_right = (ImageView)findViewById(R.id.img_right);
         //код для скругление углов правой картинки
         img_right.setClipToOutline(true);
+
 
         // Приложение на весь экран - начало
         Window w = getWindow();
