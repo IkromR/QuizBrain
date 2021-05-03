@@ -37,7 +37,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/back"
-                    android:background="@drawable/style_btn_stroke_black95_press_white"
+                    android:background="@drawable/button_stroke_black95_press_white"
                     android:textSize="24sp"
                     android:paddingRight="5dp"
                     android:paddingLeft="5dp"
