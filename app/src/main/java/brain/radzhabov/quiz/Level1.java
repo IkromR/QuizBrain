@@ -13,8 +13,14 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.util.Random;
+
 public class Level1 extends AppCompatActivity {
     Dialog dialog;
+    public int numLeft; //Переменная для левой картинки + текст
+    public int numRight; //Переменная для правой картинки + текст
+    Array array = new Array(); //Создал новый объект из класса Array
+    Random random = new Random(); //Для генерации случайных чисел
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +40,10 @@ public class Level1 extends AppCompatActivity {
         //код для скругление углов правой картинки
         img_right.setClipToOutline(true);
 
+        //Путь к левой TextView
+        final TextView text_left = findViewById(R.id.text_left);
+        //Путь к правой TextView
+        final TextView text_right = findViewById(R.id.text_right);
 
         // Приложение на весь экран - начало
         Window w = getWindow();
@@ -100,6 +110,21 @@ public class Level1 extends AppCompatActivity {
             }
         });
         //Кнопка "Назад" - конец
+
+        numLeft = random.nextInt(10); //Генерация случайного числа от 0 до 9
+        img_left.setImageResource(array.image1[numLeft]); //Достаем из массива картинку
+        text_left.setText(array.texts1[numLeft]);
+
+        numRight = random.nextInt(10); //Генерация случайного числа от 0 до 9
+        //Цикл проверяющий на равенство чисел - начало
+        while (numLeft == numRight) {
+            numRight = random.nextInt(10);
+        }
+        //Цикл проверяющий на равенство чисел - конец
+
+        img_right.setImageResource(array.image1[numRight]); //Достаем из массива картинку
+        text_right.setText(array.texts1[numRight]);
+
     }
 
     //Системная кнопка "Назад" - начало
