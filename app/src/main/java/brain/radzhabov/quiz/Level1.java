@@ -2,12 +2,16 @@ package brain.radzhabov.quiz;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.app.Dialog;
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 public class Level1 extends AppCompatActivity {
     Dialog dialog;
@@ -39,6 +43,39 @@ public class Level1 extends AppCompatActivity {
         dialog.setContentView(R.layout.previewdialog); //путь к макету диалогового окна
         dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT)); //прозрачный фон диалового окна
         dialog.setCancelable(false); //окно нельзя закрыть кнопкой "Назад"
+
+        // Кнопка которое закрывает диалоговое окно - начало
+        TextView btnclose = (TextView)dialog.findViewById(R.id.btnclose);
+        btnclose.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //Обработка нажатие кнопки - начало
+                try {
+                    //Вернутся назад к выбору уровня - начало
+                    Intent intent = new Intent(Level1.this, GameLevels.class); //Намерение для перехода
+                    startActivity(intent); //Старт намерения
+                    finish(); //Закрыть окно(а это в свою очередь классы)
+                    //Вернутся назад к выбору уровня - конец
+                } catch (Exception e) {
+                    //пусто
+                }
+                dialog.dismiss(); //Закрытие диалогового окна
+                //Обработка нажатие кнопки - конец
+            }
+        });
+        // Кнопка которое закрывает диалоговое окно - конец
+
+        //Кнопка "Продолжить" - начало
+        Button btncontinue = (Button)dialog.findViewById(R.id.btncontinue);
+        btncontinue.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.dismiss(); //Закрытие диалогового окна
+            }
+        });
+        //Кнопка "Продолжить" - конец
+
+
         dialog.show(); //показать диаловое окно
     }
 }

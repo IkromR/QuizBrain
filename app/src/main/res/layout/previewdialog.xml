@@ -22,6 +22,7 @@
             android:id="@+id/btnclose"
             android:text="X"
             android:textStyle="bold"
+            android:textColor="@color/black95"
             android:gravity="center"
             android:background="@drawable/button_stroke_black95_press_white"
             android:layout_gravity="end"/>

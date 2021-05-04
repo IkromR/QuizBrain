@@ -27,8 +27,8 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 //обработка кнопки "Начать"
                 try {
-                    Intent intent = new Intent(MainActivity.this, GameLevels.class);
-                    startActivity(intent);
+                    Intent intent = new Intent(MainActivity.this, GameLevels.class); //Намерение для перехода
+                    startActivity(intent); //Старт намерения
                     finish();
                 } catch(Exception e) {
                     //пусто

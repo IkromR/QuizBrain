@@ -27,10 +27,9 @@ public class GameLevels extends AppCompatActivity {
         button_back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 try {
-                    Intent intent = new Intent(GameLevels.this, MainActivity.class);
-                    startActivity(intent);
+                    Intent intent = new Intent(GameLevels.this, MainActivity.class); //Намерение для перехода
+                    startActivity(intent); //Старт намерения
                     finish();
                 } catch (Exception e) {
                     //пусто
@@ -45,8 +44,8 @@ public class GameLevels extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 try {
-                    Intent intent = new Intent(GameLevels.this, Level1.class);
-                    startActivity(intent);
+                    Intent intent = new Intent(GameLevels.this, Level1.class); //Намерение для перехода
+                    startActivity(intent); //Старт намерения
                     finish();
                 } catch (Exception e) {
                     //пусто
