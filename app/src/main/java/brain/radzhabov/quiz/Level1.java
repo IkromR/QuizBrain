@@ -54,7 +54,7 @@ public class Level1 extends AppCompatActivity {
                     //Вернутся назад к выбору уровня - начало
                     Intent intent = new Intent(Level1.this, GameLevels.class); //Намерение для перехода
                     startActivity(intent); //Старт намерения
-                    finish(); //Закрыть окно(а это в свою очередь классы)
+                    finish(); //Закрыть окно(а это в свою очередь класс)
                     //Вернутся назад к выбору уровня - конец
                 } catch (Exception e) {
                     //пусто
@@ -75,7 +75,40 @@ public class Level1 extends AppCompatActivity {
         });
         //Кнопка "Продолжить" - конец
 
-
         dialog.show(); //показать диаловое окно
+
+        //Кнопка "Назад" - начало
+        Button button_back = (Button)findViewById(R.id.button_back);
+        button_back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //Обработка нажатие кнопки "Назад" - начало
+                try {
+                    //Вернутся назад к выбору уровня - начало
+                    Intent intent = new Intent(Level1.this, GameLevels.class); //Намерение для перехода
+                    startActivity(intent); //Старт намерения
+                    finish(); //Закрыть окно(а это в свою очередь класс)
+                    //Вернутся назад к выбору уровня - конец
+                } catch (Exception e) {
+                    //пусто
+                }
+                //Обработка нажатие кнопки "Назад" - конец
+            }
+        });
+        //Кнопка "Назад" - конец
+    }
+
+    //Системная кнопка "Назад" - начало
+    @Override
+    public void onBackPressed() {
+        //обработка кнопки "Назад"
+        try {
+            Intent intent = new Intent(Level1.this, GameLevels.class);
+            startActivity(intent);
+            finish();
+        } catch (Exception e) {
+            //пусто
+        }
+        //Системная кнопка "Назад" - конец
     }
 }

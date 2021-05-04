@@ -30,7 +30,7 @@ public class GameLevels extends AppCompatActivity {
                 try {
                     Intent intent = new Intent(GameLevels.this, MainActivity.class); //Намерение для перехода
                     startActivity(intent); //Старт намерения
-                    finish();
+                    finish(); //Закрыть окно(а это в свою очередь класс)
                 } catch (Exception e) {
                     //пусто
                 }
