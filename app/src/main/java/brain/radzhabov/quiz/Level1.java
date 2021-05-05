@@ -9,6 +9,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.view.animation.Animation;
+import android.view.animation.AnimationSet;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -21,13 +24,14 @@ public class Level1 extends AppCompatActivity {
     public int numRight; //Переменная для правой картинки + текст
     Array array = new Array(); //Создал новый объект из класса Array
     Random random = new Random(); //Для генерации случайных чисел
+    public int count = 0; //счетчик правильных ответов
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.universal);
 
-        //Создаем переменную text_levels
+        //Создаю переменную text_levels
         TextView text_levels = findViewById(R.id.text_levels);
         text_levels.setText(R.string.level1); //Установили текст
 
@@ -110,6 +114,10 @@ public class Level1 extends AppCompatActivity {
             }
         });
         //Кнопка "Назад" - конец
+
+        //Подключаем анимацию - начало
+        final Animation a = AnimationUtils.loadAnimation(Level1.this, R.anim.alpha);
+        //Подключаем анимацию - конец
 
         numLeft = random.nextInt(10); //Генерация случайного числа от 0 до 9
         img_left.setImageResource(array.image1[numLeft]); //Достаем из массива картинку
