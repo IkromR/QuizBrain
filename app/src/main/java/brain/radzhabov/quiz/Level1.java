@@ -222,7 +222,7 @@ public class Level1 extends AppCompatActivity {
                         img_right.setImageResource(array.image1[numRight]); //Достаем из массива картинку
                         img_right.startAnimation(a);
                         text_right.setText(array.texts1[numRight]); //Достаем из массива текст
-                        img_right.setEnabled(true); //Включаем правой картинки
+                        img_right.setEnabled(true); //Включаем обратно правую картинки
                     }
                 }
                 //Условие касание картинки - конец
@@ -230,6 +230,95 @@ public class Level1 extends AppCompatActivity {
             }
         });
         //Обрабатываем нажатие на левую картинку - конец
+
+        //Обрабатываем нажатие на правую картинку - начало
+        img_right.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                //Условие касание картинки - начало
+                if(event.getAction() == MotionEvent.ACTION_DOWN) {
+                    //Если коснулся картинки -  начало
+                    img_left.setEnabled(false); //Блокировка левую картинки
+                    if(numLeft < numRight) {
+                        img_right.setImageResource(R.drawable.img_true);
+                    } else {
+                        img_right.setImageResource(R.drawable.img_false);
+                    }
+                    //Если коснулся картинки - конец
+                } else if (event.getAction() == MotionEvent.ACTION_UP) {
+                    //Если отпустил палец -  начало
+                    if(numLeft < numRight){
+                        //Если правая картинка больше
+                        if(count < 20 ){
+                            count++;
+                        }
+
+                        //Закрашываем прогресс серым цветом - начало
+                        for(int i = 0; i < 20; i++) {
+                            TextView tv = findViewById(progress[i]);
+                            tv.setBackgroundResource(R.drawable.style_points);
+                        }
+                        //Закрашываем прогресс серым цветом - конец
+
+                        //Определение правильных ответов и закрашивание их зеленым - начало
+                        for(int i = 0; i < count; i++) {
+                            TextView tv = findViewById(progress[i]);
+                            tv.setBackgroundResource(R.drawable.style_points_green);
+                        }
+                        //Определение правильных ответов и закрашивание их зеленым - конец
+
+                    } else {
+                        //Если правая картинка меньше
+                        if(count > 0) {
+                            if(count == 1) {
+                                count = 0;
+                            } else {
+                                count -= 2;
+                            }
+                        }
+                        //Закрашываем прогресс серым цветом - начало
+                        for(int i = 0; i < 19; i++) {
+                            TextView tv = findViewById(progress[i]);
+                            tv.setBackgroundResource(R.drawable.style_points);
+                        }
+                        //Закрашываем прогресс серым цветом - конец
+
+                        //Определение правильных ответов и закрашивание их зеленым - начало
+                        for(int i = 0; i < count; i++) {
+                            TextView tv = findViewById(progress[i]);
+                            tv.setBackgroundResource(R.drawable.style_points_green);
+                        }
+                        //Определение правильных ответов и закрашивание их зеленым - конец
+                    }
+                    //Если отпустил палец - конец
+                    if(count == 20) {
+                        //Выход из уровня
+
+                    }else {
+                        numLeft = random.nextInt(10); //Генерация случайного числа от 0 до 9
+                        img_left.setImageResource(array.image1[numLeft]); //Достаем из массива картинку
+                        img_left.startAnimation(a);
+                        text_left.setText(array.texts1[numLeft]); //Достаем из массива текст
+
+                        numRight = random.nextInt(10); //Генерация случайного числа от 0 до 9
+                        //Цикл проверяющий на равенство чисел - начало
+                        while (numLeft == numRight) {
+                            numRight = random.nextInt(10);
+                        }
+                        //Цикл проверяющий на равенство чисел - конец
+
+                        img_right.setImageResource(array.image1[numRight]); //Достаем из массива картинку
+                        img_right.startAnimation(a);
+                        text_right.setText(array.texts1[numRight]); //Достаем из массива текст
+                        img_left.setEnabled(true); //Включаем обратно левую картинки
+                    }
+                }
+                //Условие касание картинки - конец
+                return true;
+            }
+        });
+        //Обрабатываем нажатие на правую картинку - конец
+
 
     }
 
