@@ -63,24 +63,31 @@ public class Level2 extends AppCompatActivity {
         dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT)); //прозрачный фон диалового окна
         dialog.setCancelable(false); //окно нельзя закрыть кнопкой "Назад"
 
+        //Установка картинки в диалоговое окно - начало
+        ImageView prewiewimg = (ImageView)dialog.findViewById(R.id.previewimg);
+        prewiewimg.setImageResource(R.drawable.previewimgtwo);
+        //Установка картинки в диалоговое окно - конец
+
+        //Установка описания задании - начало
+        TextView textdiscription = (TextView)dialog.findViewById(R.id.textdescription);
+        textdiscription.setText(R.string.leveltwo);
+        //Установка описания задании - конец
+
         // Кнопка которое закрывает диалоговое окно - начало
         TextView btnclose = (TextView)dialog.findViewById(R.id.btnclose);
-        btnclose.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //Обработка нажатие кнопки - начало
-                try {
-                    //Вернутся назад к выбору уровня - начало
-                    Intent intent = new Intent(Level2.this, GameLevels.class); //Намерение для перехода
-                    startActivity(intent); //Старт намерения
-                    finish(); //Закрыть окно(а это в свою очередь класс)
-                    //Вернутся назад к выбору уровня - конец
-                } catch (Exception e) {
-                    //пусто
-                }
-                dialog.dismiss(); //Закрытие диалогового окна
-                //Обработка нажатие кнопки - конец
+        btnclose.setOnClickListener(v -> {
+            //Обработка нажатие кнопки - начало
+            try {
+                //Вернутся назад к выбору уровня - начало
+                Intent intent = new Intent(Level2.this, GameLevels.class); //Намерение для перехода
+                startActivity(intent); //Старт намерения
+                finish(); //Закрыть окно(а это в свою очередь класс)
+                //Вернутся назад к выбору уровня - конец
+            } catch (Exception e) {
+                //пусто
             }
+            dialog.dismiss(); //Закрытие диалогового окна
+            //Обработка нажатие кнопки - конец
         });
         // Кнопка которое закрывает диалоговое окно - конец
 
