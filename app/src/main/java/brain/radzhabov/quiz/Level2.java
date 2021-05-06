@@ -14,9 +14,7 @@ import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import androidx.appcompat.app.AppCompatActivity;
-
 import java.util.Random;
 
 public class Level2 extends AppCompatActivity {
@@ -137,8 +135,8 @@ public class Level2 extends AppCompatActivity {
         //Подключение анимации - конец
 
         numLeft = random.nextInt(10); //Генерация случайного числа от 0 до 9
-        img_left.setImageResource(array.image1[numLeft]); //Достаем из массива картинку
-        text_left.setText(array.texts1[numLeft]);
+        img_left.setImageResource(array.image2[numLeft]); //Достаем из массива картинку
+        text_left.setText(array.texts2[numLeft]);
 
         numRight = random.nextInt(10); //Генерация случайного числа от 0 до 9
         //Цикл проверяющий на равенство чисел - начало
@@ -147,8 +145,8 @@ public class Level2 extends AppCompatActivity {
         }
         //Цикл проверяющий на равенство чисел - конец
 
-        img_right.setImageResource(array.image1[numRight]); //Достаем из массива картинку
-        text_right.setText(array.texts1[numRight]);
+        img_right.setImageResource(array.image2[numRight]); //Достаем из массива картинку
+        text_right.setText(array.texts2[numRight]);
 
         //Обрабатываем нажатие на левую картинку - начало
         img_left.setOnTouchListener(new View.OnTouchListener() {
@@ -215,9 +213,9 @@ public class Level2 extends AppCompatActivity {
 
                     }else {
                         numLeft = random.nextInt(10); //Генерация случайного числа от 0 до 9
-                        img_left.setImageResource(array.image1[numLeft]); //Достаем из массива картинку
+                        img_left.setImageResource(array.image2[numLeft]); //Достаем из массива картинку
                         img_left.startAnimation(a);
-                        text_left.setText(array.texts1[numLeft]); //Достаем из массива текст
+                        text_left.setText(array.texts2[numLeft]); //Достаем из массива текст
 
                         numRight = random.nextInt(10); //Генерация случайного числа от 0 до 9
                         //Цикл проверяющий на равенство чисел - начало
@@ -226,9 +224,9 @@ public class Level2 extends AppCompatActivity {
                         }
                         //Цикл проверяющий на равенство чисел - конец
 
-                        img_right.setImageResource(array.image1[numRight]); //Достаем из массива картинку
+                        img_right.setImageResource(array.image2[numRight]); //Достаем из массива картинку
                         img_right.startAnimation(a);
-                        text_right.setText(array.texts1[numRight]); //Достаем из массива текст
+                        text_right.setText(array.texts2[numRight]); //Достаем из массива текст
                         img_right.setEnabled(true); //Включаем обратно правую картинки
                     }
                 }
@@ -303,20 +301,21 @@ public class Level2 extends AppCompatActivity {
 
                     }else {
                         numLeft = random.nextInt(10); //Генерация случайного числа от 0 до 9
-                        img_left.setImageResource(array.image1[numLeft]); //Достаем из массива картинку
+                        img_left.setImageResource(array.image2[numLeft]); //Достаем из массива картинку
                         img_left.startAnimation(a);
-                        text_left.setText(array.texts1[numLeft]); //Достаем из массива текст
+                        text_left.setText(array.texts2[numLeft]); //Достаем из массива текст
 
                         numRight = random.nextInt(10); //Генерация случайного числа от 0 до 9
+
                         //Цикл проверяющий на равенство чисел - начало
                         while (numLeft == numRight) {
                             numRight = random.nextInt(10);
                         }
                         //Цикл проверяющий на равенство чисел - конец
 
-                        img_right.setImageResource(array.image1[numRight]); //Достаем из массива картинку
+                        img_right.setImageResource(array.image2[numRight]); //Достаем из массива картинку
                         img_right.startAnimation(a);
-                        text_right.setText(array.texts1[numRight]); //Достаем из массива текст
+                        text_right.setText(array.texts2[numRight]); //Достаем из массива текст
                         img_left.setEnabled(true); //Включаем обратно левую картинки
                     }
                 }

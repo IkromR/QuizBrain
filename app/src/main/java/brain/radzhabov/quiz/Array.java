@@ -14,7 +14,6 @@ public class Array {
             R.drawable.onelevel_eight,
             R.drawable.onelevel_nine
     };
-
     final int[] texts1 = {
             R.string.lvl1txt0,
             R.string.lvl1txt1,
@@ -29,4 +28,30 @@ public class Array {
     };
     //Массив для первого уровня - конец
 
+    //Массив для второго уровня - начало
+    final int[] image2 = {
+            R.drawable.twolevel_one,
+            R.drawable.twolevel_two,
+            R.drawable.twolevel_three,
+            R.drawable.twolevel_four,
+            R.drawable.twolevel_five,
+            R.drawable.twolevel_six,
+            R.drawable.twolevel_seven,
+            R.drawable.twolevel_eight,
+            R.drawable.twolevel_nine,
+            R.drawable.twolevel_ten
+    };
+    final int[] texts2 = {
+            R.string.lvl2txt1,
+            R.string.lvl2txt2,
+            R.string.lvl2txt3,
+            R.string.lvl2txt4,
+            R.string.lvl2txt5,
+            R.string.lvl2txt6,
+            R.string.lvl2txt7,
+            R.string.lvl2txt8,
+            R.string.lvl2txt9,
+            R.string.lvl2txt10,
+    };
+    //Массив для второго уровня - конец
 }
