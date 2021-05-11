@@ -15,10 +15,12 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
 import androidx.appcompat.app.AppCompatActivity;
+
 import java.util.Random;
 
-public class Level2 extends AppCompatActivity {
+public class Level3 extends AppCompatActivity {
     Dialog dialog;
     Dialog dialogEnd;
 
@@ -66,12 +68,17 @@ public class Level2 extends AppCompatActivity {
 
         //Установка картинки в диалоговое окно - начало
         ImageView prewiewimg = (ImageView)dialog.findViewById(R.id.previewimg);
-        prewiewimg.setImageResource(R.drawable.previewimg2);
+        prewiewimg.setImageResource(R.drawable.previewimg3);
         //Установка картинки в диалоговое окно - конец
+
+        //Установка фон в диалоговое окно - начало
+        LinearLayout dialogfon = dialog.findViewById(R.id.dialogfon);
+        dialogfon.setBackgroundResource(R.drawable.previewbackground3);
+        //Установка фон в диалоговое окно - конец
 
         //Установка описания задании - начало
         TextView textdiscription = (TextView)dialog.findViewById(R.id.textdescription);
-        textdiscription.setText(R.string.leveltwo);
+        textdiscription.setText(R.string.levelthree);
         //Установка описания задании - конец
 
         // Кнопка которое закрывает диалоговое окно - начало
@@ -80,7 +87,7 @@ public class Level2 extends AppCompatActivity {
             //Обработка нажатие кнопки - начало
             try {
                 //Вернутся назад к выбору уровня - начало
-                Intent intent = new Intent(Level2.this, GameLevels.class); //Намерение для перехода
+                Intent intent = new Intent(Level3.this, GameLevels.class); //Намерение для перехода
                 startActivity(intent); //Старт намерения
                 finish(); //Закрыть окно(а это в свою очередь класс)
                 //Вернутся назад к выбору уровня - конец
@@ -125,7 +132,7 @@ public class Level2 extends AppCompatActivity {
                 //Обработка нажатие кнопки - начало
                 try {
                     //Вернутся назад к выбору уровня - начало
-                    Intent intent = new Intent(Level2.this, GameLevels.class); //Намерение для перехода
+                    Intent intent = new Intent(Level3.this, GameLevels.class); //Намерение для перехода
                     startActivity(intent); //Старт намерения
                     finish(); //Закрыть окно(а это в свою очередь класс)
                     //Вернутся назад к выбору уровня - конец
@@ -144,7 +151,7 @@ public class Level2 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 try {
-                    Intent intent = new Intent(Level2.this, Level3.class);
+                    Intent intent = new Intent(Level3.this, Level3.class);
                     startActivity(intent);
                     finish();
                 } catch (Exception e){
@@ -164,7 +171,7 @@ public class Level2 extends AppCompatActivity {
                 //Обработка нажатие кнопки "Назад" - начало
                 try {
                     //Вернутся назад к выбору уровня - начало
-                    Intent intent = new Intent(Level2.this, GameLevels.class); //Намерение для перехода
+                    Intent intent = new Intent(Level3.this, GameLevels.class); //Намерение для перехода
                     startActivity(intent); //Старт намерения
                     finish(); //Закрыть окно(а это в свою очередь класс)
                     //Вернутся назад к выбору уровня - конец
@@ -186,7 +193,7 @@ public class Level2 extends AppCompatActivity {
         //Массив для прогресса игры - конец
 
         //Подключение анимации - начало
-        final Animation a = AnimationUtils.loadAnimation(Level2.this, R.anim.alpha);
+        final Animation a = AnimationUtils.loadAnimation(Level3.this, R.anim.alpha);
         //Подключение анимации - конец
 
         numLeft = random.nextInt(10); //Генерация случайного числа от 0 до 9
@@ -386,7 +393,7 @@ public class Level2 extends AppCompatActivity {
     public void onBackPressed() {
         //обработка кнопки "Назад"
         try {
-            Intent intent = new Intent(Level2.this, GameLevels.class);
+            Intent intent = new Intent(Level3.this, GameLevels.class);
             startActivity(intent);
             finish();
         } catch (Exception e) {
