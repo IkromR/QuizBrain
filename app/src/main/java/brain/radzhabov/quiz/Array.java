@@ -41,6 +41,7 @@ public class Array {
             R.drawable.twolevel_nine,
             R.drawable.twolevel_ten
     };
+
     final int[] texts2 = {
             R.string.lvl2txt1,
             R.string.lvl2txt2,
@@ -54,4 +55,24 @@ public class Array {
             R.string.lvl2txt10,
     };
     //Массив для второго уровня - конец
+
+    //Массив для третьего уровня - начало
+    final int[] image3 = {
+            R.drawable.three_level1, R.drawable.three_level2, R.drawable.three_level3, R.drawable.three_level4,
+            R.drawable.three_level5, R.drawable.three_level6, R.drawable.three_level7, R.drawable.three_level8,
+            R.drawable.three_level9, R.drawable.three_level10, R.drawable.three_level11, R.drawable.three_level12,
+            R.drawable.three_level13, R.drawable.three_level14, R.drawable.three_level15, R.drawable.three_level16,
+            R.drawable.three_level17, R.drawable.three_level18, R.drawable.three_level19, R.drawable.three_level20,
+            R.drawable.three_level21,
+    };
+
+    final int[] texts3 = {
+            R.string.lvl3txt1, R.string.lvl3txt2, R.string.lvl3txt3, R.string.lvl3txt4,
+            R.string.lvl3txt5, R.string.lvl3txt6, R.string.lvl3txt7, R.string.lvl3txt8,
+            R.string.lvl3txt9, R.string.lvl3txt10, R.string.lvl3txt11, R.string.lvl3txt12,
+            R.string.lvl3txt13, R.string.lvl3txt14, R.string.lvl3txt15, R.string.lvl3txt16,
+            R.string.lvl3txt17, R.string.lvl3txt18, R.string.lvl3txt19, R.string.lvl3txt20,
+            R.string.lvl3txt21
+    };
+    //Массив для третьего уровня - конец
 }

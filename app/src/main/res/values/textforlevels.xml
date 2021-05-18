@@ -21,4 +21,26 @@
     <string name="lvl2txt8">VIII</string>
     <string name="lvl2txt9">IX</string>
     <string name="lvl2txt10">X</string>
+
+    <string name="lvl3txt1">Кролик</string>
+    <string name="lvl3txt2">Кот</string>
+    <string name="lvl3txt3">Коала</string>
+    <string name="lvl3txt4">Кот</string>
+    <string name="lvl3txt5">Кот</string>
+    <string name="lvl3txt6">Собака</string>
+    <string name="lvl3txt7">Кот</string>
+    <string name="lvl3txt8">Тапир</string>
+    <string name="lvl3txt9">Собака</string>
+    <string name="lvl3txt10">Собака</string>
+    <string name="lvl3txt11">Тюлень</string>
+    <string name="lvl3txt12">Панда</string>
+    <string name="lvl3txt13">Ёжик</string>
+    <string name="lvl3txt14">Тигр</string>
+    <string name="lvl3txt15">Тигр</string>
+    <string name="lvl3txt16">Собака</string>
+    <string name="lvl3txt17">Собачка</string>
+    <string name="lvl3txt18">Мопс</string>
+    <string name="lvl3txt19">Тигр</string>
+    <string name="lvl3txt20">Собака</string>
+    <string name="lvl3txt21">Собака</string>
 </resources>

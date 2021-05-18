@@ -29,6 +29,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <!-- _____________ -->
 
         <!--Первый Уровень-->
         <activity
@@ -38,6 +39,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <!-- _____________ -->
+
         <!--Второй Уровень-->
         <activity
             android:name=".Level2"
@@ -46,6 +49,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <!-- _____________ -->
+
         <!--Третий Уровень-->
         <activity
             android:name=".Level3"
@@ -54,6 +59,18 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <!-- _____________ -->
+
+        <!--Четвертый Уровень-->
+        <activity
+            android:name=".Level4"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <!-- _____________ -->
+
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />

@@ -76,6 +76,19 @@ public class GameLevels extends AppCompatActivity {
             }
         });
         //Кнопка для перехода на 3 уровень - конец
+
+        //Кнопка для перехода на 4 уровень - начало
+        TextView textView4 = (TextView) findViewById(R.id.textView4);
+        textView4.setOnClickListener(v -> {
+            try {
+                Intent intent = new Intent(GameLevels.this, Level4.class); //Намерение для перехода
+                startActivity(intent); //Старт намерения
+                finish();
+            } catch (Exception e) {
+                //пусто
+            }
+        });
+        //Кнопка для перехода на 4 уровень - конец
     }
 
 
