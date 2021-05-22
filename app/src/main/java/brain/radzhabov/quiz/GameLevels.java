@@ -1,6 +1,7 @@
 package brain.radzhabov.quiz;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
@@ -16,6 +17,9 @@ public class GameLevels extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.gamelevels);
+
+        SharedPreferences save = getSharedPreferences("Save", MODE_PRIVATE);
+        final int level = save.getInt("Level", 1);
 
         //Приложение на вес экран - начало
         Window w = getWindow();
@@ -42,9 +46,13 @@ public class GameLevels extends AppCompatActivity {
         TextView textView1 = (TextView) findViewById(R.id.textView1);
         textView1.setOnClickListener(v -> {
             try {
-                Intent intent = new Intent(GameLevels.this, Level1.class); //Намерение для перехода
-                startActivity(intent); //Старт намерения
-                finish();
+                if(level >= 1) {
+                    Intent intent = new Intent(GameLevels.this, Level1.class); //Намерение для перехода
+                    startActivity(intent); //Старт намерения
+                    finish();
+                } else {
+                    //пусто
+                }
             } catch (Exception e) {
                 //пусто
             }
@@ -53,11 +61,18 @@ public class GameLevels extends AppCompatActivity {
 
         //Кнопка для перехода на 2 уровень - начало
         TextView textView2 = (TextView) findViewById(R.id.textView2);
+        if(level >= 2) {
+            textView2.setBackgroundResource(R.drawable.secondlevel);
+        }
         textView2.setOnClickListener(v -> {
             try {
-                Intent intent = new Intent(GameLevels.this, Level2.class); //Намерение для перехода
-                startActivity(intent); //Старт намерения
-                finish();
+                if(level >= 2) {
+                    Intent intent = new Intent(GameLevels.this, Level2.class); //Намерение для перехода
+                    startActivity(intent); //Старт намерения
+                    finish();
+                } else {
+                    //пусто
+                }
             } catch (Exception e) {
                 //пусто
             }
@@ -66,11 +81,19 @@ public class GameLevels extends AppCompatActivity {
 
         //Кнопка для перехода на 3 уровень - начало
         TextView textView3 = (TextView) findViewById(R.id.textView3);
+        if(level >= 3) {
+            textView3.setBackgroundResource(R.drawable.thirdlevel);
+        }
         textView3.setOnClickListener(v -> {
             try {
-                Intent intent = new Intent(GameLevels.this, Level3.class); //Намерение для перехода
-                startActivity(intent); //Старт намерения
-                finish();
+                if(level >= 3) {
+                    textView3.setCompoundDrawablePadding(R.drawable.thirdlevel);
+                    Intent intent = new Intent(GameLevels.this, Level3.class); //Намерение для перехода
+                    startActivity(intent); //Старт намерения
+                    finish();
+                } else{
+                    //пусто
+                }
             } catch (Exception e) {
                 //пусто
             }
@@ -81,9 +104,14 @@ public class GameLevels extends AppCompatActivity {
         TextView textView4 = (TextView) findViewById(R.id.textView4);
         textView4.setOnClickListener(v -> {
             try {
-                Intent intent = new Intent(GameLevels.this, Level4.class); //Намерение для перехода
-                startActivity(intent); //Старт намерения
-                finish();
+                if(level >= 4) {
+                    textView4.setCompoundDrawablePadding(R.drawable.fourlevel);
+                    Intent intent = new Intent(GameLevels.this, Level4.class); //Намерение для перехода
+                    startActivity(intent); //Старт намерения
+                    finish();
+                } else {
+                    //пусто
+                }
             } catch (Exception e) {
                 //пусто
             }
@@ -94,14 +122,28 @@ public class GameLevels extends AppCompatActivity {
         TextView textView5 = (TextView) findViewById(R.id.textView5);
         textView5.setOnClickListener(v -> {
             try {
-                Intent intent = new Intent(GameLevels.this, Level5.class); //Намерение для перехода
-                startActivity(intent); //Старт намерения
-                finish();
+                if(level >= 5) {
+                    textView5.setCompoundDrawablePadding(R.drawable.fivelevel);
+                    Intent intent = new Intent(GameLevels.this, Level5.class); //Намерение для перехода
+                    startActivity(intent); //Старт намерения
+                    finish();
+                } else {
+                    //пусто
+                }
             } catch (Exception e) {
                 //пусто
             }
         });
         //Кнопка для перехода на 5 уровень - конец
+
+        final int[] x = {
+                R.id.textView1,
+                R.id.textView2,
+                R.id.textView3,
+                R.id.textView4,
+                R.id.textView5,
+        };
+
     }
 
 

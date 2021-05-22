@@ -3,6 +3,7 @@ package brain.radzhabov.quiz;
 import androidx.appcompat.app.AppCompatActivity;
 import android.app.Dialog;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
@@ -257,6 +258,16 @@ public class Level1 extends AppCompatActivity {
                     //Если отпустил палец - конец
                     if(count == 20) {
                         //Выход из уровня
+                        //Сохранение данных о пройденных уровнях
+                        SharedPreferences save = getSharedPreferences("Save", MODE_PRIVATE);
+                        final int level = save.getInt("Level", 1);
+                        if (level > 1) {
+                            //пусто
+                        } else {
+                            SharedPreferences.Editor editor = save.edit();
+                            editor.putInt("Level", 2);
+                            editor.commit();
+                        }
                         dialogEnd.show(); //показать диаловое окно
 
                     }else {
@@ -346,6 +357,16 @@ public class Level1 extends AppCompatActivity {
                     //Если отпустил палец - конец
                     if(count == 20) {
                         //Выход из уровня
+                        //Сохранение данных о пройденных уровнях
+                        SharedPreferences save = getSharedPreferences("Save", MODE_PRIVATE);
+                        final int level = save.getInt("Level", 1);
+                        if (level > 1) {
+                            //пусто
+                        } else {
+                            SharedPreferences.Editor editor = save.edit();
+                            editor.putInt("Level", 2);
+                            editor.commit();
+                        }
                         dialogEnd.show(); //показать диаловое окно
                     } else {
                         numLeft = random.nextInt(10); //Генерация случайного числа от 0 до 9
