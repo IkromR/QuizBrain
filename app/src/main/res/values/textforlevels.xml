@@ -43,4 +43,34 @@
     <string name="lvl3txt19">Тигр</string>
     <string name="lvl3txt20">Собака</string>
     <string name="lvl3txt21">Собака</string>
+
+    <string name="lvl4txt1">Яйцо</string>
+    <string name="lvl4txt2">Колесо</string>
+    <string name="lvl4txt3">Орех</string>
+    <string name="lvl4txt4">Шар боулинга</string>
+    <string name="lvl4txt5">Кокос</string>
+    <string name="lvl4txt6">Мяч</string>
+    <string name="lvl4txt7">Тыква</string>
+    <string name="lvl4txt8">Ручка</string>
+    <string name="lvl4txt9">Помидор</string>
+    <string name="lvl4txt10">Шлем</string>
+    <string name="lvl4txt11">Яблоко</string>
+    <string name="lvl4txt12">Веревка</string>
+    <string name="lvl4txt13">Груша</string>
+    <string name="lvl4txt14">Телефон</string>
+    <string name="lvl4txt15">Броколи</string>
+    <string name="lvl4txt16">Шлем</string>
+    <string name="lvl4txt17">Лук</string>
+    <string name="lvl4txt18">Кроссовки</string>
+    <string name="lvl4txt19">Арбуз</string>
+    <string name="lvl4txt20">Кружка</string>
+
+    <string name="lvl5txt1">Меркурий</string>
+    <string name="lvl5txt2">Марс</string>
+    <string name="lvl5txt3">Венера</string>
+    <string name="lvl5txt4">Земля</string>
+    <string name="lvl5txt5">Нептун</string>
+    <string name="lvl5txt6">Уран</string>
+    <string name="lvl5txt7">Сатурн</string>
+    <string name="lvl5txt8">Юпитер</string>
 </resources>

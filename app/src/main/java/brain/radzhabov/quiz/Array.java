@@ -75,4 +75,80 @@ public class Array {
             R.string.lvl3txt21
     };
     //Массив для третьего уровня - конец
+
+    //Массив для четвертего уровня - начало
+    final int[] image4 = {
+            R.drawable.edible1,
+            R.drawable.inedible1,
+            R.drawable.edible2,
+            R.drawable.inedible2,
+            R.drawable.edible3,
+            R.drawable.inedible3,
+            R.drawable.edible4,
+            R.drawable.inedible4,
+            R.drawable.edible5,
+            R.drawable.inedible5,
+            R.drawable.edible6,
+            R.drawable.inedible6,
+            R.drawable.edible7,
+            R.drawable.inedible7,
+            R.drawable.edible8,
+            R.drawable.inedible8,
+            R.drawable.edible9,
+            R.drawable.inedible9,
+            R.drawable.edible10,
+            R.drawable.inedible10,
+    };
+
+    final int[] texts4 = {
+            R.string.lvl4txt1,
+            R.string.lvl4txt2,
+            R.string.lvl4txt3,
+            R.string.lvl4txt4,
+            R.string.lvl4txt5,
+            R.string.lvl4txt6,
+            R.string.lvl4txt7,
+            R.string.lvl4txt8,
+            R.string.lvl4txt9,
+            R.string.lvl4txt10,
+            R.string.lvl4txt11,
+            R.string.lvl4txt12,
+            R.string.lvl4txt13,
+            R.string.lvl4txt14,
+            R.string.lvl4txt15,
+            R.string.lvl4txt16,
+            R.string.lvl4txt17,
+            R.string.lvl4txt18,
+            R.string.lvl4txt19,
+            R.string.lvl4txt20,
+    };
+
+    final int[] strong = {
+        1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,
+    };
+    //Массив для четвертего уровня - конец
+
+    //Массив для пятого уровня - начало
+    final int[] image5 = {
+            R.drawable.five_level1,
+            R.drawable.five_level2,
+            R.drawable.five_level3,
+            R.drawable.five_level4,
+            R.drawable.five_level5,
+            R.drawable.five_level6,
+            R.drawable.five_level7,
+            R.drawable.five_level8,
+    };
+
+    final int[] texts5 = {
+            R.string.lvl5txt1,
+            R.string.lvl5txt2,
+            R.string.lvl5txt3,
+            R.string.lvl5txt4,
+            R.string.lvl5txt5,
+            R.string.lvl5txt6,
+            R.string.lvl5txt7,
+            R.string.lvl5txt8,
+    };
+    //Массив для пятого уровня - конец
 }

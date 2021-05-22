@@ -20,7 +20,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.Random;
 
-public class Level4 extends AppCompatActivity {
+public class Level5 extends AppCompatActivity {
     Dialog dialog;
     Dialog dialogEnd;
 
@@ -37,12 +37,13 @@ public class Level4 extends AppCompatActivity {
 
         //Создаю переменную text_levels
         TextView text_levels = findViewById(R.id.text_levels);
-        text_levels.setText(R.string.level4); //Установили текст
+        text_levels.setText(R.string.level3); //Установили текст
 
 
         final ImageView img_left = (ImageView)findViewById(R.id.img_left);
         //Код для скругление углов левой картинки
         img_left.setClipToOutline(true);
+
 
         final ImageView img_right = (ImageView)findViewById(R.id.img_right);
         //Код для скругление углов правой картинки
@@ -58,10 +59,10 @@ public class Level4 extends AppCompatActivity {
         w.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
         // Приложение на весь экран - конец
 
-        //Установка фона - начало
+        //Установка фона уровня - начало
         ImageView background = findViewById(R.id.background);
-        background.setImageResource(R.drawable.level4);
-        //Установка фона - конец
+        background.setImageResource(R.drawable.level5);
+        //Установка фона уровня - конец
 
         //Вызов диалогового окна в начале игры
         dialog = new Dialog(this);  //создаем новое диалоговое окно
@@ -72,17 +73,17 @@ public class Level4 extends AppCompatActivity {
 
         //Установка картинки в диалоговое окно - начало
         ImageView prewiewimg = (ImageView)dialog.findViewById(R.id.previewimg);
-        prewiewimg.setImageResource(R.drawable.previewimg4);
+        prewiewimg.setImageResource(R.drawable.previewimg5);
         //Установка картинки в диалоговое окно - конец
 
         //Установка фон в диалоговое окно - начало
         LinearLayout dialogfon = dialog.findViewById(R.id.dialogfon);
-        dialogfon.setBackgroundResource(R.drawable.previewbackground4);
+        dialogfon.setBackgroundResource(R.drawable.previewbackground5);
         //Установка фон в диалоговое окно - конец
 
         //Установка описания задании - начало
         TextView textdiscription = (TextView)dialog.findViewById(R.id.textdescription);
-        textdiscription.setText(R.string.levelfour );
+        textdiscription.setText(R.string.levelfive);
         //Установка описания задании - конец
 
         // Кнопка которое закрывает диалоговое окно - начало
@@ -91,7 +92,7 @@ public class Level4 extends AppCompatActivity {
             //Обработка нажатие кнопки - начало
             try {
                 //Вернутся назад к выбору уровня - начало
-                Intent intent = new Intent(Level4.this, GameLevels.class); //Намерение для перехода
+                Intent intent = new Intent(Level5.this, GameLevels.class); //Намерение для перехода
                 startActivity(intent); //Старт намерения
                 finish(); //Закрыть окно(а это в свою очередь класс)
                 //Вернутся назад к выбору уровня - конец
@@ -123,14 +124,14 @@ public class Level4 extends AppCompatActivity {
         dialogEnd.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.MATCH_PARENT);
         dialogEnd.setCancelable(false); //окно нельзя закрыть кнопкой "Назад"
 
-        //Установка картинки в конечной диалоговой окне - начало
+        //Установка фона в конечной диалоговой окне - начало
         LinearLayout dialogfonEnd = dialogEnd.findViewById(R.id.dialogfon);
-        dialogfonEnd.setBackgroundResource(R.drawable.previewbackground4);
-        //Установка картинки в конечной диалоговой окне - конец
+        dialogfonEnd.setBackgroundResource(R.drawable.previewbackground5);
+        //Установка фона в конечной диалоговой окне - конец
 
         //Интересней факт - начало
         TextView textdiscriptionEnd = (TextView)dialogEnd.findViewById(R.id.textdescriptionEnd);
-        textdiscriptionEnd.setText(R.string.levelfourEnd);
+        textdiscriptionEnd.setText(R.string.levelfiveEnd);
         //Интересней факт - конец
 
         // Кнопка которое закрывает диалоговое окно - начало
@@ -141,7 +142,7 @@ public class Level4 extends AppCompatActivity {
                 //Обработка нажатие кнопки - начало
                 try {
                     //Вернутся назад к выбору уровня - начало
-                    Intent intent = new Intent(Level4.this, GameLevels.class); //Намерение для перехода
+                    Intent intent = new Intent(Level5.this, GameLevels.class); //Намерение для перехода
                     startActivity(intent); //Старт намерения
                     finish(); //Закрыть окно(а это в свою очередь класс)
                     //Вернутся назад к выбору уровня - конец
@@ -160,7 +161,7 @@ public class Level4 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 try {
-                    Intent intent = new Intent(Level4.this, Level5.class);
+                    Intent intent = new Intent(Level5.this, GameLevels.class);
                     startActivity(intent);
                     finish();
                 } catch (Exception e){
@@ -180,7 +181,7 @@ public class Level4 extends AppCompatActivity {
                 //Обработка нажатие кнопки "Назад" - начало
                 try {
                     //Вернутся назад к выбору уровня - начало
-                    Intent intent = new Intent(Level4.this, GameLevels.class); //Намерение для перехода
+                    Intent intent = new Intent(Level5.this, GameLevels.class); //Намерение для перехода
                     startActivity(intent); //Старт намерения
                     finish(); //Закрыть окно(а это в свою очередь класс)
                     //Вернутся назад к выбору уровня - конец
@@ -202,22 +203,22 @@ public class Level4 extends AppCompatActivity {
         //Массив для прогресса игры - конец
 
         //Подключение анимации - начало
-        final Animation a = AnimationUtils.loadAnimation(Level4.this, R.anim.alpha);
+        final Animation a = AnimationUtils.loadAnimation(Level5.this, R.anim.alpha);
         //Подключение анимации - конец
 
-        numLeft = random.nextInt(20); //Генерация случайного числа
-        img_left.setImageResource(array.image4[numLeft]); //Достаем из массива картинку
-        text_left.setText(array.texts4[numLeft]);
+        numLeft = random.nextInt(8); //Генерация случайного числа
+        img_left.setImageResource(array.image5[numLeft]); //Достаем из массива картинку
+        text_left.setText(array.texts5[numLeft]);
 
-        numRight = random.nextInt(21); //Генерация случайного числа от 0 до 9
+        numRight = random.nextInt(8); //Генерация случайного числа
         //Цикл проверяющий на равенство чисел - начало
-        while (array.strong[numLeft] == array.strong[numRight]) {
-            numRight = random.nextInt(20);
+        while (numLeft == numRight) {
+            numRight = random.nextInt(8);
         }
         //Цикл проверяющий на равенство чисел - конец
 
-        img_right.setImageResource(array.image4[numRight]); //Достаем из массива картинку
-        text_right.setText(array.texts4[numRight]);
+        img_right.setImageResource(array.image5[numRight]); //Достаем из массива картинку
+        text_right.setText(array.texts5[numRight]);
 
         //Обрабатываем нажатие на левую картинку - начало
         img_left.setOnTouchListener(new View.OnTouchListener() {
@@ -227,7 +228,7 @@ public class Level4 extends AppCompatActivity {
                 if(event.getAction() == MotionEvent.ACTION_DOWN) {
                     //Если коснулся картинки -  начало
                     img_right.setEnabled(false); //Блокировка правой картинки
-                    if(array.strong[numLeft] > array.strong[numRight]) {
+                    if(numLeft > numRight) {
                         img_left.setImageResource(R.drawable.img_true);
                     } else {
                         img_left.setImageResource(R.drawable.img_false);
@@ -235,7 +236,7 @@ public class Level4 extends AppCompatActivity {
                     //Если коснулся картинки - конец
                 } else if (event.getAction() == MotionEvent.ACTION_UP) {
                     //Если отпустил палец -  начало
-                    if(array.strong[numLeft] > array.strong[numRight]){
+                    if(numLeft > numRight){
                         //Если левая картинка больше
                         if(count < 20 ){
                             count++;
@@ -283,20 +284,22 @@ public class Level4 extends AppCompatActivity {
                         //Выход из уровня
                         dialogEnd.show(); //показать диаловое окно
                     }else {
-                        numLeft = random.nextInt(20); //Генерация случайного числа
-                        img_left.setImageResource(array.image4[numLeft]); //Достаем из массива картинку
-                        text_left.setText(array.texts4[numLeft]);
+                        numLeft = random.nextInt(8); //Генерация случайного числа
+                        img_left.setImageResource(array.image5[numLeft]); //Достаем из массива картинку
+                        img_left.startAnimation(a);
+                        text_left.setText(array.texts5[numLeft]); //Достаем из массива текст
 
-                        numRight = random.nextInt(21); //Генерация случайного числа от 0 до 9
+                        numRight = random.nextInt(8); //Генерация случайного числа
+
                         //Цикл проверяющий на равенство чисел - начало
-                        while (array.strong[numLeft] == array.strong[numRight]) {
-                            numRight = random.nextInt(20);
+                        while (numLeft == numRight) {
+                            numRight = random.nextInt(8);
                         }
                         //Цикл проверяющий на равенство чисел - конец
 
-                        img_right.setImageResource(array.image4[numRight]); //Достаем из массива картинку
-                        text_right.setText(array.texts4[numRight]);
-
+                        img_right.setImageResource(array.image5[numRight]); //Достаем из массива картинку
+                        img_right.startAnimation(a);
+                        text_right.setText(array.texts5[numRight]); //Достаем из массива текст
                         img_right.setEnabled(true); //Включаем обратно правую картинки
                     }
                 }
@@ -314,7 +317,7 @@ public class Level4 extends AppCompatActivity {
                 if(event.getAction() == MotionEvent.ACTION_DOWN) {
                     //Если коснулся картинки -  начало
                     img_left.setEnabled(false); //Блокировка левую картинки
-                    if(array.strong[numLeft] < array.strong[numRight]) {
+                    if(numLeft < numRight) {
                         img_right.setImageResource(R.drawable.img_true);
                     } else {
                         img_right.setImageResource(R.drawable.img_false);
@@ -322,7 +325,7 @@ public class Level4 extends AppCompatActivity {
                     //Если коснулся картинки - конец
                 } else if (event.getAction() == MotionEvent.ACTION_UP) {
                     //Если отпустил палец -  начало
-                    if(array.strong[numLeft] < array.strong[numRight]){
+                    if(numLeft < numRight){
                         //Если правая картинка больше
                         if(count < 20 ){
                             count++;
@@ -370,19 +373,22 @@ public class Level4 extends AppCompatActivity {
                         //Выход из уровня
                         dialogEnd.show(); //показать диаловое окно
                     }else {
-                        numLeft = random.nextInt(20); //Генерация случайного числа
-                        img_left.setImageResource(array.image4[numLeft]); //Достаем из массива картинку
-                        text_left.setText(array.texts4[numLeft]);
+                        numLeft = random.nextInt(8); //Генерация случайного числа
+                        img_left.setImageResource(array.image5[numLeft]); //Достаем из массива картинку
+                        img_left.startAnimation(a);
+                        text_left.setText(array.texts5[numLeft]); //Достаем из массива текст
 
-                        numRight = random.nextInt(21); //Генерация случайного числа от 0 до 9
+                        numRight = random.nextInt(8); //Генерация случайного числа
+
                         //Цикл проверяющий на равенство чисел - начало
-                        while (array.strong[numLeft] == array.strong[numRight]) {
-                            numRight = random.nextInt(20);
+                        while (numLeft == numRight) {
+                            numRight = random.nextInt(8);
                         }
                         //Цикл проверяющий на равенство чисел - конец
 
-                        img_right.setImageResource(array.image4[numRight]); //Достаем из массива картинку
-                        text_right.setText(array.texts4[numRight]);
+                        img_right.setImageResource(array.image5[numRight]); //Достаем из массива картинку
+                        img_right.startAnimation(a);
+                        text_right.setText(array.texts5[numRight]); //Достаем из массива текст
 
                         img_left.setEnabled(true); //Включаем обратно левую картинки
                     }
@@ -399,7 +405,7 @@ public class Level4 extends AppCompatActivity {
     public void onBackPressed() {
         //обработка кнопки "Назад"
         try {
-            Intent intent = new Intent(Level4.this, GameLevels.class);
+            Intent intent = new Intent(Level5.this, GameLevels.class);
             startActivity(intent);
             finish();
         } catch (Exception e) {
