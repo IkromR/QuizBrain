@@ -10,18 +10,34 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Design.NoActionBar">
 
-        <!--Главное меню-->
+        <!-- Окно входа -->
         <activity
-            android:name=".MainActivity"
+            android:name=".LoginActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 
-        <!--Уровни игр-->
+        <!-- Окно регистрации -->
+        <activity
+            android:name=".RegisterActivity"
+            android:screenOrientation="portrait" />
+
+        <!-- Главное меню администратора -->
+        <activity android:name=".GameLevelsAdmin"/>
+
+        <!-- Главное меню -->
+        <activity
+            android:name=".MainActivity"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- Уровни игр -->
         <activity
             android:name=".GameLevels"
             android:screenOrientation="portrait">
@@ -29,9 +45,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <!-- _____________ -->
 
-        <!--Первый Уровень-->
+        <!-- Первый Уровень -->
         <activity
             android:name=".Level1"
             android:screenOrientation="portrait">
@@ -39,9 +54,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <!-- _____________ -->
 
-        <!--Второй Уровень-->
+        <!-- Второй Уровень -->
         <activity
             android:name=".Level2"
             android:screenOrientation="portrait">
@@ -49,9 +63,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <!-- _____________ -->
 
-        <!--Третий Уровень-->
+        <!-- Третий Уровень -->
         <activity
             android:name=".Level3"
             android:screenOrientation="portrait">
@@ -59,9 +72,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <!-- _____________ -->
 
-        <!--Четвертый Уровень-->
+        <!-- Четвертый Уровень -->
         <activity
             android:name=".Level4"
             android:screenOrientation="portrait">
@@ -69,9 +81,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <!-- _____________ -->
 
-        <!--Пятый Уровень-->
+        <!-- Пятый Уровень -->
         <activity
             android:name=".Level5"
             android:screenOrientation="portrait">
@@ -79,7 +90,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <!-- _____________ -->
 
         <meta-data
             android:name="preloaded_fonts"

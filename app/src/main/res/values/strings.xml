@@ -1,5 +1,17 @@
 <resources>
-    <string name="app_name">Quiz</string>
+    <string name="app_name">Brain Quiz</string>
+    <string name="login_from">Вход</string>
+    <string name="register_from">Регистрация</string>
+    <string name="login">Вход</string>
+    <string name="logout">Выход</string>
+    <string name="register">Регистрация</string>
+    <string name="cancel">Отмена</string>
+    <string name="username">Имя пользователя</string>
+    <string name="address">Email Адрес</string>
+    <string name="password">Пароль</string>
+    <string name="gender">Пол</string>
+    <string name="male">Мужской</string>
+    <string name="female">Женский</string>
     <string name="start">Начать</string>
     <string name="back">Назад</string>
     <string name="level">Уровень:</string>

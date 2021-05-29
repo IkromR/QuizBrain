@@ -23,6 +23,8 @@ public class Level3 extends AppCompatActivity {
     Dialog dialog;
     Dialog dialogEnd;
 
+    SharedPreferences preferences;
+
     public int numLeft; //Переменная для левой картинки + текст
     public int numRight; //Переменная для правой картинки + текст
     Array array = new Array(); //Создал новый объект из класса Array
@@ -33,6 +35,8 @@ public class Level3 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.universal);
+
+        preferences = getSharedPreferences("Userinfo", 0);
 
         //Создаю переменную text_levels
         TextView text_levels = findViewById(R.id.text_levels);
@@ -115,7 +119,7 @@ public class Level3 extends AppCompatActivity {
         dialog.show(); //показать диаловое окно
 
         //__________________________________________________________________
-        //Вызов диалогового окна в конце игры
+        //**Вызов диалогового окна в конце игры**\\
         dialogEnd = new Dialog(this);  //создаем новое диалоговое окно
         dialogEnd.requestWindowFeature(Window.FEATURE_NO_TITLE); //скрываем заголовок
         dialogEnd.setContentView(R.layout.dialogend); //путь к макету диалогового окна
@@ -156,18 +160,18 @@ public class Level3 extends AppCompatActivity {
 
         //Кнопка "Продолжить" - начало
         Button btncontinue2 = (Button)dialogEnd.findViewById(R.id.btncontinue);
-        btncontinue2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                try {
-                    Intent intent = new Intent(Level3.this, Level4.class);
-                    startActivity(intent);
-                    finish();
-                } catch (Exception e){
-                    //пусто
-                }
-                dialogEnd.dismiss(); //Закрытие диалогового окна
+        btncontinue2.setOnClickListener(v -> {
+            boolean stateLevel3 = preferences.getBoolean("stateLevel3", true);
+            if(stateLevel3) {
+                Intent intent = new Intent(Level3.this, GameLevels.class);
+                startActivity(intent);
+                finish();
+            } else {
+                Intent intent = new Intent(Level3.this, Level4.class);
+                startActivity(intent);
+                finish();
             }
+            dialogEnd.dismiss(); //Закрытие диалогового окна
         });
         //Кнопка "Продолжить" - конец
         //__________________________________________________________________

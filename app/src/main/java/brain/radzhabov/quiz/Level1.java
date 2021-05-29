@@ -25,6 +25,8 @@ public class Level1 extends AppCompatActivity {
     Dialog dialog;
     Dialog dialogEnd;
 
+    SharedPreferences preferences;
+
     public int numLeft; //Переменная для левой картинки + текст
     public int numRight; //Переменная для правой картинки + текст
     Array array = new Array(); //Создал новый объект из класса Array
@@ -36,6 +38,8 @@ public class Level1 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.universal);
 
+        preferences = getSharedPreferences("Userinfo", 0);
+
         //Создаю переменную text_levels
         TextView text_levels = findViewById(R.id.text_levels);
         text_levels.setText(R.string.level1); //Установили текст
@@ -43,7 +47,6 @@ public class Level1 extends AppCompatActivity {
         final ImageView img_left = (ImageView)findViewById(R.id.img_left);
         //код для скругление углов левой картинки
         img_left.setClipToOutline(true);
-
 
         final ImageView img_right = (ImageView)findViewById(R.id.img_right);
         //код для скругление углов правой картинки
@@ -58,7 +61,6 @@ public class Level1 extends AppCompatActivity {
         Window w = getWindow();
         w.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
         // Приложение на весь экран - конец
-
 
         //Вызов диалогового окна в начале игры
         dialog = new Dialog(this);  //создаем новое диалоговое окно
@@ -135,18 +137,21 @@ public class Level1 extends AppCompatActivity {
         btncontinue2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                try {
+                boolean stateLevel1 = preferences.getBoolean("stateLevel1", true);
+                if(stateLevel1) {
+                    Intent intent = new Intent(Level1.this, GameLevels.class);
+                    startActivity(intent);
+                    finish();
+                } else {
                     Intent intent = new Intent(Level1.this, Level2.class);
                     startActivity(intent);
                     finish();
-                } catch (Exception e){
-                    //пусто
                 }
                 dialogEnd.dismiss(); //Закрытие диалогового окна
             }
         });
         //Кнопка "Продолжить" - конец
-        //__________________________________________________________________
+        //*******************************************************************
 
         //Кнопка "Назад" - начало
         Button button_back = (Button)findViewById(R.id.button_back);
